@@ -31,5 +31,32 @@
     <a href="list.html"><button class="border">Film</button></a>
 
   </center>
+
+    <p class="pfont">Catatan</p>
+
+    <textarea id="catatan" rows="4" cols="35" placeholder="apa yang kamu mau tulis" class="keren"></textarea>
+    <center>
+    <button onclick="simpanCatatan()" class="border1">Simpan</button>
+  </center>
+
+    <p class="pfont">Daftar Catatan:</p>
+    <ul id="daftar-catatan" class="ulfont"></ul>
+
+    <script>
+        function simpanCatatan() {
+            var catatanInput = document.getElementById("catatan");
+            var catatan = catatanInput.value;
+
+            if (catatan !== "") {
+                var daftarCatatan = document.getElementById("daftar-catatan");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(catatan));
+                daftarCatatan.appendChild(li);
+
+                catatanInput.value = ""; // Mengosongkan input setelah catatan disimpan
+            }
+        }
+    </script>
+
 </body>
 </html>
